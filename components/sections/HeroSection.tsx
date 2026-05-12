@@ -48,7 +48,7 @@ export default function HeroSection() {
           {/* Left content — 60% */}
           <div className="lg:col-span-3 space-y-6">
             <p className="text-xs font-semibold tracking-[0.15em] uppercase text-[#0B3D5C]/70">
-              A clinical program from Vandalia Health / CAMC Institute for Academic Medicine
+              A clinical program to reduce biological heartage
             </p>
 
             <h1 className="text-5xl lg:text-6xl font-bold text-[#0B3D5C] leading-[1.1] tracking-tight"
