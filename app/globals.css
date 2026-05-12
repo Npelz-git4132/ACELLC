@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF7;
+  --foreground: #264653;
+  --deep-blue: #0B3D5C;
+  --heart-red: #E63946;
+  --energy-orange: #F4A261;
+  --calm-green: #2A9D8F;
+  --warning-amber: #E9C46A;
+  --neutral-slate: #264653;
+  --bg-offwhite: #FAFAF7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-deep-blue: #0B3D5C;
+  --color-heart-red: #E63946;
+  --color-energy-orange: #F4A261;
+  --color-calm-green: #2A9D8F;
+  --color-warning-amber: #E9C46A;
+  --color-neutral-slate: #264653;
+  --color-offwhite: #FAFAF7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count-up {
+  animation: countUp 0.5s ease-out forwards;
+}
+
+.heartbeat-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 3s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 1000; opacity: 0.2; }
+  50% { stroke-dashoffset: 0; opacity: 0.5; }
+  100% { stroke-dashoffset: -1000; opacity: 0.2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-count-up,
+  .heartbeat-line,
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
